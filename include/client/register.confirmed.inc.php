@@ -7,8 +7,8 @@
             __("You've confirmed your email address and successfully activated your account. You may proceed to check on previously opened tickets or open a new ticket.");
 }
 ?>
-<div class="container py-5" style="max-width:680px;">
-  <div class="card border-0 shadow-sm rounded-3 p-4 p-md-5 text-center bg-white">
+<div class="d-flex justify-content-center align-items-center py-5" style="width:100%;min-height:60vh;display:flex;justify-content:center;align-items:center;">
+  <div class="card border-0 shadow-sm rounded-3 p-4 p-md-5 text-center bg-white" style="width:100%;max-width:680px;margin:0 auto;">
     <div class="mb-3">
       <i class="fas fa-check-circle text-success display-4"></i>
     </div>
