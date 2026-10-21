@@ -1,4 +1,4 @@
-<div class="container py-4" style="max-width:960px;">
+<div class="container py-4" style="width:100%;max-width:960px;margin-left:auto !important;margin-right:auto !important;float:none;">
   <!-- Header Title Box -->
   <div class="bg-light p-3 px-4 rounded-3 border-start border-4 border-udla mb-4 shadow-sm">
     <h2 class="fw-bold mb-1" style="color:#1D1D1B;"><?php echo __('Manage Your Profile Information'); ?></h2>
