@@ -595,6 +595,20 @@ body {
 label.required, span.required {
   font-weight: bold;
 }
+/* Mantener el asterisco de campo obligatorio en la misma línea que el label */
+label.control-label.col-sm-2 {
+  width: 100%;
+  max-width: 100%;
+  flex: 0 0 100%;
+  white-space: nowrap;
+}
+label.control-label > br {
+  display: none;
+}
+span.required > span.error {
+  display: inline;
+  white-space: nowrap;
+}
 #ticketForm div label.required,
 #clientLogin div label.required {
   text-align: left;
