@@ -53,9 +53,9 @@ $isCreate = (isset($options['mode']) && $options['mode'] == 'create');
             <br/></label>
             <?php
             } else { ?>
-      <label class="control-label col-sm-2"></label>
+      <label class="control-label col-sm-3"></label>
             <?php } ?>
-      <div class="col-sm-10">
+      <div class="col-sm-9">
       <?php       if ($field->isEditableToUsers() || $isCreate) {
                 $field->render(array('client'=>true));
             ?><?php
