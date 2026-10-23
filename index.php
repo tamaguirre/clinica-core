@@ -22,14 +22,17 @@ require(CLIENTINC_DIR.'header.inc.php');
 ?>
 
 <!-- ====================================================
-     BANNER HERO — SEMANA DE CIBERSEGURIDAD
+     CARRUSEL HERO
      ==================================================== -->
-<section style="
-    background: linear-gradient(135deg, #1D1D1B 0%, #2e2c2a 50%, #3a1800 100%);
-    padding: 3rem 0 2.6rem;
-    position: relative;
-    overflow: hidden;
-">
+<div id="heroCarousel" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-slide-to="0" class="active" aria-current="true" aria-label="Clínica de Ciberseguridad"></button>
+    <button type="button" data-slide-to="1" aria-label="Estudia con nosotros"></button>
+  </div>
+  <div class="carousel-inner">
+
+<!-- Slide 1 — SEMANA DE CIBERSEGURIDAD -->
+<section class="carousel-item active hero-slide">
     <!-- Decorative circles -->
     <div style="position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:rgba(232,99,10,.08);pointer-events:none;"></div>
     <div style="position:absolute;bottom:-80px;left:-40px;width:260px;height:260px;border-radius:50%;background:rgba(232,99,10,.06);pointer-events:none;"></div>
@@ -74,6 +77,105 @@ require(CLIENTINC_DIR.'header.inc.php');
         </div>
     </div>
 </section>
+
+<!-- Slide 2 — ESTUDIA CON NOSOTROS -->
+<section class="carousel-item hero-slide">
+    <div style="position:absolute;top:-60px;left:-60px;width:320px;height:320px;border-radius:50%;background:rgba(232,99,10,.08);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-80px;right:-40px;width:260px;height:260px;border-radius:50%;background:rgba(232,99,10,.06);pointer-events:none;"></div>
+
+    <div class="container-xl px-3 position-relative">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-5">
+                <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(232,99,10,.18);border:1px solid rgba(232,99,10,.4);color:#E8630A;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:20px;padding:4px 14px;margin-bottom:1rem;">
+                    <i class="fas fa-graduation-cap"></i> Executive Online
+                </div>
+                <h2 style="font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:.8rem;">
+                    Estudia con <span style="color:#E8630A;">nosotros</span>
+                </h2>
+                <p style="color:#b0aca6;font-size:1rem;max-width:460px;margin-bottom:1.4rem;line-height:1.6;">
+                    Programas 100% online pensados para quienes trabajan. Especialízate en tecnología y gestión con UDLA.
+                </p>
+                <a href="https://admision.udla.cl/programa-executive?modalidad=online"
+                   target="_blank" rel="noopener"
+                   class="btn btn-udla btn-lg fw-semibold px-4" style="border-radius:8px;">
+                    <i class="fas fa-arrow-right me-2"></i>Ver programas Executive
+                </a>
+            </div>
+            <div class="col-lg-7">
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <a class="program-card" target="_blank" rel="noopener"
+                           href="https://admision.udla.cl/carreras/executive-online/ingenieria-en-ciberseguridad-online/">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Ingeniería en Ciberseguridad<small>Online</small></span>
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a class="program-card" target="_blank" rel="noopener"
+                           href="https://admision.udla.cl/carreras/executive-online/ingenieria-en-informatica-online/">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Ingeniería en Informática<small>Online</small></span>
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a class="program-card" target="_blank" rel="noopener"
+                           href="https://admision.udla.cl/carreras/executive-online/ingenieria-en-informatica-continuidad-de-estudios/">
+                            <i class="fas fa-server"></i>
+                            <span>Ingeniería en Informática<small>Continuidad de estudios</small></span>
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a class="program-card" target="_blank" rel="noopener"
+                           href="https://admision.udla.cl/carreras/executive-online/ingenieria-en-informacion-y-control-de-gestion-continuidad-de-estudios/">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Ing. en Información y Control de Gestión<small>Continuidad de estudios</small></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  </div><!-- /carousel-inner -->
+  <button class="carousel-control-prev" type="button" data-dir="-1">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-dir="1">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+<script>
+(function () {
+    var root = document.getElementById('heroCarousel');
+    if (!root) return;
+    var slides = root.querySelectorAll('.carousel-item');
+    var dots = root.querySelectorAll('[data-slide-to]');
+    var current = 0, timer = null, DELAY = 7000;
+
+    function show(i) {
+        current = (i + slides.length) % slides.length;
+        slides.forEach(function (s, k) { s.classList.toggle('active', k === current); });
+        dots.forEach(function (d, k) {
+            d.classList.toggle('active', k === current);
+            if (k === current) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+        });
+    }
+    function restart() { clearInterval(timer); timer = setInterval(function () { show(current + 1); }, DELAY); }
+
+    root.querySelectorAll('[data-dir]').forEach(function (b) {
+        b.addEventListener('click', function () { show(current + parseInt(b.getAttribute('data-dir'), 10)); restart(); });
+    });
+    dots.forEach(function (d) {
+        d.addEventListener('click', function () { show(parseInt(d.getAttribute('data-slide-to'), 10)); restart(); });
+    });
+    root.addEventListener('mouseenter', function () { clearInterval(timer); });
+    root.addEventListener('mouseleave', restart);
+    restart();
+})();
+</script>
 
 <!-- ====================================================
      SECCIÓN: ¿SABÍAS QUE? — 4 TARJETAS
@@ -247,6 +349,44 @@ require(CLIENTINC_DIR.'header.inc.php');
     0%, 100% { opacity:1; transform:scale(1); }
     50%       { opacity:.5; transform:scale(1.4); }
 }
+#heroCarousel { background: linear-gradient(135deg, #1D1D1B 0%, #2e2c2a 50%, #3a1800 100%); }
+.hero-slide {
+    padding: 3rem 3.5rem 3.4rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 360px;
+}
+#heroCarousel .carousel-inner { display: grid; }
+#heroCarousel .hero-slide {
+    grid-area: 1 / 1;
+    display: flex; align-items: center;
+    float: none; margin-right: 0;
+    opacity: 0; visibility: hidden;
+    transition: opacity .6s ease, visibility .6s ease;
+}
+#heroCarousel .hero-slide.active { opacity: 1; visibility: visible; }
+#heroCarousel .carousel-control-prev, #heroCarousel .carousel-control-next { width: 3rem; }
+#heroCarousel .carousel-indicators [data-slide-to] {
+    box-sizing: content-box; flex: 0 1 auto; padding: 0; margin: 0 4px; cursor: pointer;
+    background-color: #E8630A; width: 24px; height: 4px; border: 0; border-radius: 2px;
+    opacity: .4; transition: opacity .3s ease;
+}
+#heroCarousel .carousel-indicators .active { opacity: 1; }
+.program-card {
+    display: flex; align-items: center; gap: 14px; height: 100%;
+    padding: 1rem 1.1rem; border-radius: 12px;
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+    color: #fff; text-decoration: none; font-weight: 600; font-size: .92rem; line-height: 1.3;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.program-card i {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(232,99,10,.2); color: #E8630A; font-size: 1.1rem;
+}
+.program-card small { display: block; font-weight: 400; font-size: .74rem; color: #b0aca6; margin-top: 2px; }
+.program-card:hover { color: #fff; transform: translateY(-3px); background: rgba(232,99,10,.15); border-color: rgba(232,99,10,.5); }
+@media (max-width: 575.98px) { .hero-slide { padding: 2.4rem 1rem 3rem; } }
 </style>
 
 <?php require(CLIENTINC_DIR.'footer.inc.php'); ?>

@@ -359,9 +359,13 @@ if (osTicket::is_ie())
 <!-- NAVBAR INSTITUCIONAL -->
 <nav class="navbar navbar-expand-lg udla-navbar">
     <div class="container-xl px-3">
-        <a class="navbar-brand" href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>">
-            <img src="<?php echo ROOT_PATH; ?>logo.php" alt="<?php echo Format::htmlchars($ost->getConfig()->getTitle()); ?>" style="max-height:44px;">
-        </a>
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand me-0" href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>">
+                <img src="<?php echo ROOT_PATH; ?>logo.php" alt="<?php echo Format::htmlchars($ost->getConfig()->getTitle()); ?>" style="max-height:44px;">
+            </a>
+            <span class="d-none d-sm-block mx-3" style="width:1px;height:32px;background:#d9d6d2;"></span>
+            <img class="d-none d-sm-block" src="<?php echo ROOT_PATH; ?>images/udla/logo-ecampus.png" alt="eCampus" style="height:34px;width:auto;">
+        </div>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#ostNav" aria-controls="ostNav" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -376,7 +380,7 @@ if (osTicket::is_ie())
                 <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="https://wa.me/14155238886">
-                        <i class="fab fa-whatsapp me-1 text-success"></i>Abrir Ticket Vía Whatsapp
+                        <i class="fab fa-whatsapp me-1 text-success"></i>Abrir Vía Whatsapp
                     </a>
                 </li>
                 <li class="nav-item">
