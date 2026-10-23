@@ -371,7 +371,7 @@ if (osTicket::is_ie())
         </button>
         <div class="collapse navbar-collapse" id="ostNav">
             <?php if($nav && ($navs=$nav->getNavLinks()) && is_array($navs)) { ?>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-10">
                 <?php foreach($navs as $name => $navItem) { ?>
                 <li class="nav-item">
                     <a class="nav-link<?php echo $navItem['active'] ? ' active' : ''; ?>"
