@@ -52,7 +52,8 @@ header("Content-Security-Policy: frame-ancestors ".$cfg->getAllowIframes()."; sc
             }
             </style>
         </div>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#ostNav" aria-controls="ostNav" aria-expanded="false">
+        <button class="navbar-toggler border-0" type="button" aria-controls="ostNav" aria-expanded="false" aria-label="Menú"
+                onclick="var m=document.getElementById('ostNav');var o=m.classList.toggle('show');this.setAttribute('aria-expanded',o);">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="ostNav">

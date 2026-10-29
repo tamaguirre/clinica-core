@@ -366,7 +366,8 @@ if (osTicket::is_ie())
             <span class="brand-sep mx-3" style="width:1px;height:32px;background:#E8630A;"></span>
             <img class="brand-logo-ecampus" src="<?php echo ROOT_PATH; ?>images/udla/logo-ecampus.png" alt="eCampus" style="height:34px;width:auto;">
         </div>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#ostNav" aria-controls="ostNav" aria-expanded="false">
+        <button class="navbar-toggler border-0" type="button" aria-controls="ostNav" aria-expanded="false" aria-label="Menú"
+                onclick="var m=document.getElementById('ostNav');var o=m.classList.toggle('show');this.setAttribute('aria-expanded',o);">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="ostNav">
