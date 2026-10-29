@@ -40,10 +40,17 @@ header("Content-Security-Policy: frame-ancestors ".$cfg->getAllowIframes()."; sc
     <div class="container-xl px-3">
         <div class="d-flex align-items-center">
             <a class="navbar-brand me-0" href="<?php echo ROOT_PATH; ?>index.php" title="<?php echo __('Support Center'); ?>">
-                <img src="<?php echo ROOT_PATH; ?>logo.php" alt="<?php echo Format::htmlchars($ost->getConfig()->getTitle()); ?>" style="max-height:44px;">
+                <img class="brand-logo-udla" src="<?php echo ROOT_PATH; ?>logo.php" alt="<?php echo Format::htmlchars($ost->getConfig()->getTitle()); ?>" style="max-height:44px;">
             </a>
-            <span class="d-none d-sm-block mx-3" style="width:1px;height:32px;background:#d9d6d2;"></span>
-            <img class="d-none d-sm-block" src="<?php echo ROOT_PATH; ?>images/udla/logo-ecampus.png" alt="eCampus" style="height:34px;width:auto;">
+            <span class="brand-sep mx-3" style="width:1px;height:32px;background:#E8630A;"></span>
+            <img class="brand-logo-ecampus" src="<?php echo ROOT_PATH; ?>images/udla/logo-ecampus.png" alt="eCampus" style="height:34px;width:auto;">
+            <style>
+            @media (max-width:575.98px){
+              .brand-logo-udla{max-height:34px!important}
+              .brand-logo-ecampus{height:26px!important}
+              .brand-sep{height:26px!important;margin-left:.6rem!important;margin-right:.6rem!important}
+            }
+            </style>
         </div>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#ostNav" aria-controls="ostNav" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
@@ -67,6 +74,11 @@ header("Content-Security-Policy: frame-ancestors ".$cfg->getAllowIframes()."; sc
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo ROOT_PATH; ?>index.php#sabias-que">
                         <i class="fas fa-lightbulb me-1"></i>¿Sabías que?
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo ROOT_PATH; ?>pages/faq">
+                        <i class="fas fa-question-circle me-1"></i>FAQ
                     </a>
                 </li>
             </ul>

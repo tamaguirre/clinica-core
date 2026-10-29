@@ -1290,3 +1290,9 @@ img.avatar {
     margin-left: 40px;
   }
 }
+/* Logos UDLA + eCampus siempre visibles; más chicos en móvil */
+@media (max-width: 575.98px) {
+  .brand-logo-udla { max-height: 34px !important; }
+  .brand-logo-ecampus { height: 26px !important; }
+  .brand-sep { height: 26px !important; margin-left: .6rem !important; margin-right: .6rem !important; }
+}

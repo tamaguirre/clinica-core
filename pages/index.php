@@ -48,6 +48,10 @@ if (!$selected_page->isActive() || $selected_page->getType() != 'other')
 
 require(CLIENTINC_DIR.'header.inc.php');
 
+if ($slug == 'faq') {
+    // Página FAQ con diseño UDLA (sin barra lateral)
+    include CLIENTINC_DIR.'udla-faq.inc.php';
+} else {
 $BUTTONS = false;
 include CLIENTINC_DIR.'templates/sidebar.tmpl.php';
 ?>
@@ -56,6 +60,7 @@ include CLIENTINC_DIR.'templates/sidebar.tmpl.php';
 print $selected_page->getBodyWithImages();
 ?>
 </div>
+<?php } ?>
 
 <?php
 require(CLIENTINC_DIR.'footer.inc.php');
